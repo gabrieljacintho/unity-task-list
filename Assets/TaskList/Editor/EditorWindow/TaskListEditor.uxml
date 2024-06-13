@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Template name="TaskItem" src="project://database/Assets/UI%20Toolkit/TaskList/TaskItem.uxml?fileID=9197481963319205126&amp;guid=8f207a71f19839947adee7f3919e95ba&amp;type=3#TaskItem" />
+    <Style src="project://database/Assets/UI%20Toolkit/TaskList/TaskListEditor.uss?fileID=7433441132597879392&amp;guid=2901880e1627cd7459d6f7f6e860b65a&amp;type=3#TaskListEditor" />
+    <ui:VisualElement name="loadTasks" class="container" style="margin-top: 2px;">
+        <uie:ObjectField label="Task List Object" name="savedTasksObjectField" />
+        <ui:Button text="Load Tasks" parse-escape-sequences="true" display-tooltip-when-elided="true" name="loadTasksButton" class="button" />
+    </ui:VisualElement>
+    <ui:VisualElement name="currentTasks" class="container" style="flex-grow: 1; margin-right: 10px; margin-left: 10px;">
+        <ui:Label text="Tasks" name="tasksHeader" class="header" style="-unity-text-align: upper-center;" />
+        <uie:ToolbarSearchField focusable="true" name="searchField" style="margin-bottom: 7px; width: auto;" />
+        <ui:ScrollView name="taskScrollView" style="border-left-color: rgb(88, 88, 88); border-right-color: rgb(88, 88, 88); border-top-color: rgb(88, 88, 88); border-bottom-color: rgb(88, 88, 88); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; flex-grow: 1;">
+            <ui:Instance template="TaskItem" name="TaskItem" />
+            <ui:Instance template="TaskItem" name="TaskItem" />
+            <ui:Instance template="TaskItem" name="TaskItem" />
+        </ui:ScrollView>
+    </ui:VisualElement>
+    <ui:VisualElement name="addTasks" class="container" style="margin-right: 10px; margin-left: 10px;">
+        <ui:Label tabindex="-1" text="Add New Task" parse-escape-sequences="true" display-tooltip-when-elided="true" name="addTasksHeader" class="header" />
+        <ui:TextField picking-mode="Ignore" value="New task..." name="newTaskField" />
+        <ui:Button text="Add Task" parse-escape-sequences="true" display-tooltip-when-elided="true" name="addTaskButton" style="background-color: rgb(51, 141, 51);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="trackingTasks" class="container" style="margin-bottom: 2px;">
+        <ui:Button text="Save Progress" name="saveProgressButton" class="button" />
+        <ui:ProgressBar value="22" title="Progress" name="taskProgressBar" />
+    </ui:VisualElement>
+</ui:UXML>
